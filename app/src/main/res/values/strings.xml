@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">PlaceReminder</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_places">Places</string>
+    <string name="coordinates">Coordinates</string>
+    <string name="title_reminder">Enter a title for the reminder</string>
+    <string name="add_map_reminder_title">Add map reminder</string>
+    <string name="place_name">Enter a place name</string>
+    <string name="title_reminder_error">This field is required</string>
+    <string name="save_reminder">Save</string>
+    <string name="title_place_error">This field is required</string>
+    <string name="choose_place_on_map_tv">Or choose a place on the map</string>
+    <string name="short_description_reminder">Enter a short description of your reminder</string>
+    <string name="clear_reminder">Clean</string>
+    <string name="exceeded_limit">You exceeded the allowed value</string>
+    <string name="action_settings">Settings</string>
+</resources>

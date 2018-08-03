@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PlaceReminder</string>
+    <string name="title_activity_maps">Карта</string>
+    <string name="title_activity_places">Места</string>
+    <string name="coordinates">Координаты</string>
+    <string name="title_reminder">Введите заголовок напоминания</string>
+    <string name="add_map_reminder_title">Добавить напоминание на карту</string>
+    <string name="place_name">Введите название места</string>
+    <string name="title_reminder_error">Это поля является обязательным</string>
+    <string name="save_reminder">Сохранить</string>
+    <string name="title_place_error">Это поле является обязательным</string>
+    <string name="choose_place_on_map_tv">Или выберите место на карте</string>
+    <string name="short_description_reminder">Введите краткое описание вашего напоминания</string>
+    <string name="clear_reminder">Очистить</string>
+    <string name="exceeded_limit">Вы превысили допустимое значение символов</string>
+    <string name="action_settings">Настройки</string>
+</resources>
