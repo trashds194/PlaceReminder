@@ -9,7 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -133,8 +132,12 @@ public class StartActivity extends AppCompatActivity implements GoogleApiClient.
         switch (menuItem) {
             case R.id.action_settings:
                 Toast.makeText(StartActivity.this, "Menu", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(StartActivity.this, MenuMainActivity.class);
-                startActivity(intent);
+                Intent settingsIntent = new Intent(StartActivity.this, SettingsMainActivity.class);
+                startActivity(settingsIntent);
+                break;
+            case R.id.action_help:
+                Intent helpIntent = new Intent(StartActivity.this, SettingsMainActivity.class);
+                startActivity(helpIntent);
                 break;
         }
         return super.onOptionsItemSelected(item);

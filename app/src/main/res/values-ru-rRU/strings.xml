@@ -15,4 +15,5 @@
     <string name="clear_reminder">Очистить</string>
     <string name="exceeded_limit">Вы превысили допустимое значение символов</string>
     <string name="action_settings">Настройки</string>
+    <string name="action_help">Помощь</string>
 </resources>

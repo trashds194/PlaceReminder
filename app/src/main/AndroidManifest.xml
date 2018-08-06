@@ -47,8 +47,11 @@
             android:name=".AddMapRemindActivity"
             android:label="@string/add_map_reminder_title" />
         <activity
-            android:name=".MenuMainActivity"
+            android:name=".SettingsMainActivity"
             android:label="@string/action_settings" />
+
+        <activity android:name=".HelpMainActivity"
+            android:label="@string/action_help"/>
     </application>
 
 </manifest>
