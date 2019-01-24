@@ -110,8 +110,6 @@ public class StartActivity extends AppCompatActivity implements GoogleApiClient.
         fabMap = findViewById(R.id.fab_map);
         fabPlaces = findViewById(R.id.fab_places);
 
-        textView = findViewById(R.id.location);
-
         fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
         fabClose = AnimationUtils.loadAnimation(this, R.anim.fab_close);
 
@@ -136,7 +134,7 @@ public class StartActivity extends AppCompatActivity implements GoogleApiClient.
                 startActivity(settingsIntent);
                 break;
             case R.id.action_help:
-                Intent helpIntent = new Intent(StartActivity.this, SettingsMainActivity.class);
+                Intent helpIntent = new Intent(StartActivity.this, HelpMainActivity.class);
                 startActivity(helpIntent);
                 break;
         }

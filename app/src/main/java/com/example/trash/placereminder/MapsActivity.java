@@ -7,8 +7,6 @@ import android.graphics.Color;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -22,6 +20,8 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMapOptions;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -59,6 +59,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Location mLocation;
     private Location placeLocation;
     private Marker mLocationMarker;
+    GoogleMapOptions googleMapOptions;
+    MapView mapView;
 
     List<HashMap<String, String>> placeData;
 
@@ -75,11 +77,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_maps);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-
         SupportMapFragment mSupportMapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mSupportMapFragment.getMapAsync(this);
-
     }
 
     @Override
@@ -137,7 +137,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         stringBuilder.append("&radius=").append(radius);
         stringBuilder.append("&sensor=true");
 
-        stringBuilder.append("&key=AIzaSyDwZUR4VdyveULqiAwwM_YgWBl09kdsXa0");
+        stringBuilder.append("&key=AIzaSyCnC0PVJ-dshihBvgv8IM5XgVxME_ZoNKk");
 
         Log.d("Map", "<><>api: " + stringBuilder.toString());
 
@@ -218,7 +218,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .radius(radius).strokeColor(Color.argb(50, 255, 0, 0))
                 .fillColor(Color.argb(100, 255, 0, 0)));
 
-//        MarkerOptions markerOptions = new MarkerOptions();
+//        MarkerOptions markerOptions = new markerOptions();
 //        markerOptions.position(latLng);
 //        markerOptions.title("Position");
 //        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
@@ -354,11 +354,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    void markerUpdates(){
+    void markerUpdates() {
+        //Creating a market
+        MarkerOptions markerOptions = new MarkerOptions();
         placeLocation = new Location("point B");
         for (int i = 0; i < placeData.size(); i++) {
-            //Creating a market
-            MarkerOptions markerOptions = new MarkerOptions();
 
             //Getting a place from the Places list
             HashMap<String, String> hashMapPlace = placeData.get(i);
@@ -395,6 +395,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
                 //Placed a marker on the touched position
                 mMap.addMarker(markerOptions);
+                Log.d("Markers", "Markers: " + markerOptions);
             }
         }
     }
@@ -468,9 +469,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
             return place;
         }
-    }
-
-    void createMarkers(){
-
     }
 }
